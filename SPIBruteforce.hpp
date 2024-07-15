@@ -13,7 +13,7 @@ private:
     const unsigned short MIN_DIGITS = 10;
     const unsigned short MIN_LETTERS = 5;
     const unsigned short PASSWORD_LENGTH = 32;
-    const std::string alphabet = "AaBbCcDdEeFf0123456789";
+    const std::string alphabet = "ABCDEF0123456789";
     const std::string digits = "0123456789";
     const std::string letters = "AaBbCcDdEeFf";
     std::vector <std::string> passwords;
