@@ -8,6 +8,8 @@ class SPIBruteforce:
     def start (self, lenght: int, USBPort: str) -> str:
         while (True):
             key: str = "".join(random.choices(self.__alphabet, k=lenght));
+            with open("key.txt", "w") as file:
+                file.write(key);
             result = subprocess.run(["spiunlock.exe", "unlock", "key.txt", "-usb", USBPort], capture_output=True, text=True);
             if ("ERROR" in result.stdout):
                 print("KEY ----> %s IS WRONG" % (key,));
