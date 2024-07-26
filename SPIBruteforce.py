@@ -18,5 +18,6 @@ class SPIBruteforce:
                 return key;
 
 if (__name__ == "__main__"):
+    port: str = input("Enter USB Port >>> );
     unit = SPIBruteforce();
     print("\n\n" + unit.start(32, "5435342"));
