@@ -12,12 +12,12 @@ class SPIBruteforce:
                 file.write(key);
             result = subprocess.run(["spiunlock.exe", "unlock", "key.txt", "-usb", USBPort], capture_output=True, text=True);
             if ("ERROR" in result.stdout):
-                print("KEY ----> %s IS WRONG" % (key,));
+                print("KEY ----> %s IS WRONG" % (key,), end="\r");
             else:
-                print("KEY ----> %s UNLOCKING THE CHIP" % (key,));
+                print("KEY ----> %s UNLOCKING THE CHIP" % (key,), end="\r");
                 return key;
 
 if (__name__ == "__main__"):
-    port: str = input("Enter USB Port >>> );
+    port: str = input("Enter USB Port >>> ");
     unit = SPIBruteforce();
     print("\n\n" + unit.start(32, port));
